@@ -9,5 +9,181 @@ modified(m)--unstaged(u)--commited --remote repository
 "git ls -files"
 "git rm --cached michel.css" to retreive file from staging area
 "git add .txt" add all file with txt extension
+michelkadi@mss-MacBook pharma % echo "# myrepo" >> README.md
+michelkadi@mss-MacBook pharma % git init
+Initialized empty Git repository in /Users/michelkadi/Desktop/pharma/.git/
+michelkadi@mss-MacBook pharma % git add .
+michelkadi@mss-MacBook pharma % git commit -m "first commit"
+[master (root-commit) 385ced8] first commit
+ 16 files changed, 150 insertions(+)
+ create mode 100644 Abou Riad Season 2 Episode 24.mp4
+ create mode 100644 Hwarh_Zahla_Melody4Arab.Com.mp3
+ create mode 100644 README.md
+ create mode 100644 Untitled.rtf
+ create mode 100644 Untitled1.html
+ create mode 100644 format.html
+ create mode 100644 images/63e7658fb028e875274407.webp
+ create mode 100644 images/download.jpeg
+ create mode 100644 images/logo-1933884_640.webp
+ create mode 100644 images/phar.jpeg
+ create mode 100644 images/pharm.png
+ create mode 100644 js.code-workspace
+ create mode 100644 pharma.css
+ create mode 100644 pharma.html
+ create mode 100644 test.html
+ create mode 100644 text.html
+michelkadi@mss-MacBook pharma % git status
+On branch master
+nothing to commit, working tree clean
+michelkadi@mss-MacBook pharma % git branch -M main
+michelkadi@mss-MacBook pharma % git remote add origin https://github.com/johnalain/myrepo.git
+michelkadi@mss-MacBook pharma % git push -u origin main
+Counting objects: 19, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (19/19), 87.29 MiB | 336.00 KiB/s, done.
+Total 19 (delta 0), reused 0 (delta 0)
+remote: warning: See https://gh.io/lfs for more information.
+remote: warning: File Abou Riad Season 2 Episode 24.mp4 is 84.36 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/johnalain/myrepo.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+michelkadi@mss-MacBook pharma % git init
+Reinitialized existing Git repository in /Users/michelkadi/Desktop/pharma/.git/
+michelkadi@mss-MacBook pharma % git add michel.txt
+michelkadi@mss-MacBook pharma % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   michel.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   michel.txt
+
+michelkadi@mss-MacBook pharma % git checkout --michel.txt
+error: unknown option `michel.txt'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -q, --quiet           suppress progress reporting
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --detach              detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    --orphan <new-branch>
+                          new unparented branch
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -f, --force           force checkout (throw away local modifications)
+    -m, --merge           perform a 3-way merge with the new branch
+    --overwrite-ignore    update ignored files (default)
+    --conflict <style>    conflict style (merge or diff3)
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+
+michelkadi@mss-MacBook pharma % git add .txt
+fatal: pathspec '.txt' did not match any files
+michelkadi@mss-MacBook pharma % git commit --m"text"
+error: unknown option `mtext'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+michelkadi@mss-MacBook pharma % git add .txt
+fatal: pathspec '.txt' did not match any files
+michelkadi@mss-MacBook pharma % git status  
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   michel.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   michel.txt
+
+michelkadi@mss-MacBook pharma % git rm --cached michel.txt
+error: the following file has staged content different from both the
+file and the HEAD:
+    michel.txt
+(use -f to force removal)
+michelkadi@mss-MacBook pharma % git reset HEAD michel.txt
+michelkadi@mss-MacBook pharma % git add .txt
+fatal: pathspec '.txt' did not match any files
+michelkadi@mss-MacBook pharma % git add .
+michelkadi@mss-MacBook pharma % git commit -m"tech"
+[main 1034028] tech
+ 1 file changed, 13 insertions(+)
+ create mode 100644 michel.txt
+michelkadi@mss-MacBook pharma % git push -u origin main
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 486 bytes | 486.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/johnalain/myrepo.git
+   385ced8..1034028  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+michelkadi@mss-MacBook pharma %
 
 
