@@ -1,0 +1,13 @@
+"git --help"
+"git init"   initialize git repository
+there are four git status:
+modified(m)--unstaged(u)--commited --remote repository
+"touch michel.html michel.css" to create files inside folder
+'git add ." add all files
+"git add michel.html michel.css" add as many files as u want
+"git status"
+"git ls -files"
+"git rm --cached michel.css" to retreive file from staging area
+"git add .txt" add all file with txt extension
+
+
